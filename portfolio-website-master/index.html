@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youssef Medhat | Portfolio</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div id="container">
+        <header id="hd">
+            <section id="hd__sect01" class="hd__sect">
+                <img src="./images/final-logo.png" alt="logo" id="logo">
+                <h2 id="title">Youssef Medhat</h2>
+            </section>
+            <section id="hd__sect02" class="hd__sect">
+                <nav id="nav">
+                    <ul id="nav__list">
+                        <li id="nav__item01"><a href="#home">Home</a></li>
+                        <li id="nav__item02"><a href="#about">About</a></li>
+                        <li id="nav__item03"><a href="#projects">Projects</a></li>
+                        <li id="nav__item04"><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </section>
+            <section id="hd__sect03" class="hd__sect">
+                <label for="search">Search</label>
+                <input type="text" id="search" placeholder="Search projects...">
+                <button id="search-btn" type="button">Search</button> 
+            </section>    
+        </header>
+
+        <main id="mn">
+            <section id="home" class="mn__sect hero-container">
+                <div class="profile-circle">
+                    <img src="./images/YoussefMedhat.jpeg" alt="Youssef Medhat">
+                </div>
+                <h1 id="about">My name is Youssef Medhat.</h1>
+                <p class="hero-subtext">Frontend Web Developer creating responsive & modern web interfaces.</p>
+                <p class="hero-desc">Specialized in HTML5, CSS3, JavaScript, Tailwind CSS, Bootstrap, and web application UI components.</p>
+            </section>
+
+            <section id="mn__sect02" class="mn__sect title-container">
+                <h2 id="projects">Web Projects</h2>
+            </section>
+
+            <section id="mn__sect03" class="mn__sect project-card">
+                <h3>Youssef Tech Showcase</h3>
+                <p>Responsive tech product landing page built with Tailwind CSS & JavaScript.</p>
+                <a href="#" class="project-btn" target="_blank">View Project</a>
+            </section>
+
+            <section id="mn__sect04" class="mn__sect project-card">
+                <h3>E-Commerce Web UI</h3>
+                <p>Interactive web store frontend using HTML5, CSS Grid, and JS DOM manipulation.</p>
+                <a href="#" class="project-btn" target="_blank">View Project</a>
+            </section>
+
+            <section id="mn__sect05" class="mn__sect project-card">
+                <h3>Dashboard Admin Web</h3>
+                <p>Modern admin panel interface created using Bootstrap 5 and custom styles.</p>
+                <a href="#" class="project-btn" target="_blank">View Project</a>
+            </section>
+
+            <section id="mn__sect06" class="mn__sect project-card">
+                <h3>Web Portfolio Template</h3>
+                <p>Multi-screen responsive layout utilizing CSS Grid & Flexbox architecture.</p>
+                <a href="#" class="project-btn" target="_blank">View Project</a>
+            </section>
+
+            <section id="mn__sect07" class="mn__sect project-card">
+                <h3>Interactive Web Forms</h3>
+                <p>Dynamic form validation system developed with vanilla JavaScript.</p>
+                <a href="#" class="project-btn" target="_blank">View Project</a>
+            </section>
+
+            <section id="mn__sect08" class="mn__sect project-card">
+                <h3>Web Components UI Kit</h3>
+                <p>Reusable custom Web UI components built for web apps and sites.</p>
+                <a href="#" class="project-btn" target="_blank">View Project</a>
+            </section>
+        </main>
+
+        <footer id="contact">
+            <p>&copy; 2026 Youssef Medhat. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Smooth Scrolling for Navigation
+        document.querySelectorAll('#nav__list a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId.startsWith('#')) {
+                    e.preventDefault();
+                    document.querySelector(targetId)?.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Real-time Search Filter for Projects
+        const searchInput = document.getElementById('search');
+        const searchBtn = document.getElementById('search-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        function filterProjects() {
+            const query = searchInput.value.toLowerCase().trim();
+            projectCards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const desc = card.querySelector('p').textContent.toLowerCase();
+                if (title.includes(query) || desc.includes(query)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        searchInput.addEventListener('input', filterProjects);
+        searchBtn.addEventListener('click', filterProjects);
+    </script>
+</body>
+</html>
