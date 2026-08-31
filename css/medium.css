@@ -5,9 +5,12 @@
 
     #hd {
         width: 100%;
-        height: 10vh; 
+        height: auto; 
+        min-height: 10vh;
         display: flex;
+        align-items: center;
         gap: 20px;
+        padding: 10px 20px;
     }
 
     #mn {
@@ -17,13 +20,13 @@
         gap: 15px;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto 5vh repeat(3, 260px);
         grid-template-areas: 
             "mn__sect01 mn__sect01"
             "mn__sect02 mn__sect02"
             "mn__sect03 mn__sect04"
             "mn__sect05 mn__sect06"
-            "mn__sect07 mn__sect08";
+            "mn__sect07 mn__sect08"
+            "contact_sect contact_sect";
     }
 
     .mn__sect {

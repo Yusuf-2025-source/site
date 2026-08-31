@@ -5,24 +5,25 @@
 
     #hd {
         width: 100%;
-        height: 20vh; 
+        height: auto; 
+        padding: 15px 0;
         display: flex;
-        gap: 0px;
+        gap: 10px;
         flex-direction: column;
+        align-items: center;
     }
 
-    #hd__sect01 { flex: 2; }
-    #hd__sect02 { flex: 1; }
+    #hd__sect01 { flex: 1; justify-content: center; padding-left: 0; }
+    #hd__sect02 { flex: 1; justify-content: center; }
     #hd__sect03 { display: none; }
 
     #mn {
         background-color: #0b0f19;
         width: 100%;
         padding: 10px;
-        gap: 10px;
+        gap: 15px;
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: auto 5vh repeat(6, 240px);
         grid-template-areas: 
             "mn__sect01"
             "mn__sect02"
@@ -31,18 +32,21 @@
             "mn__sect05"
             "mn__sect06"
             "mn__sect07"
-            "mn__sect08";
+            "mn__sect08"
+            "contact_sect";
     }
 
     .mn__sect {
-        min-height: 240px;
+        min-height: 200px;
     }
 
     #home {
-        min-height: 320px;
+        min-height: auto;
+        padding: 25px 15px;
     }
 
     #mn__sect02 {
-        min-height: 5vh;
+        min-height: auto;
+        padding: 10px 0;
     }
 }

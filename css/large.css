@@ -10,6 +10,7 @@
         height: 10vh; 
         display: flex;
         gap: 20px;
+        align-items: center;
     }
 
     #mn {
@@ -20,10 +21,10 @@
         gap: 15px;
         display: grid;
         grid-template-columns: 2fr 1fr 1fr 1fr;
-        grid-template-rows: 0.6fr 3fr 3fr;
         grid-template-areas: 
             "mn__sect01 . mn__sect02 ."
             "mn__sect01 mn__sect03 mn__sect04 mn__sect05"
-            "mn__sect01 mn__sect06 mn__sect07 mn__sect08";
+            "mn__sect01 mn__sect06 mn__sect07 mn__sect08"
+            "contact_sect contact_sect contact_sect contact_sect";
     }
 }

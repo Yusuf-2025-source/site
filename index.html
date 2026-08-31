@@ -3,123 +3,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Youssef Medhat | Portfolio</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <title>Youssef Tech | Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
-<body>
-    <div id="container">
-        <header id="hd">
-            <section id="hd__sect01" class="hd__sect">
-                <img src="./images/final-logo.png" alt="logo" id="logo">
-                <h2 id="title">Youssef Medhat</h2>
-            </section>
-            <section id="hd__sect02" class="hd__sect">
-                <nav id="nav">
-                    <ul id="nav__list">
-                        <li id="nav__item01"><a href="#home">Home</a></li>
-                        <li id="nav__item02"><a href="#about">About</a></li>
-                        <li id="nav__item03"><a href="#projects">Projects</a></li>
-                        <li id="nav__item04"><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
-            </section>
-            <section id="hd__sect03" class="hd__sect">
-                <label for="search">Search</label>
-                <input type="text" id="search" placeholder="Search projects...">
-                <button id="search-btn" type="button">Search</button> 
-            </section>    
-        </header>
+<body class="bg-slate-900 text-slate-100 font-sans min-h-screen flex flex-col justify-between">
 
-        <main id="mn">
-            <section id="home" class="mn__sect hero-container">
-                <div class="profile-circle">
-                    <img src="./images/YoussefMedhat.jpeg" alt="Youssef Medhat">
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur border-b border-slate-800 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            
+            <!-- Logo -->
+            <a href="#home" class="text-2xl font-bold text-sky-400 hover:text-sky-300 transition-colors">
+                Youssef<span class="text-white">Tech</span>
+            </a>
+
+            <!-- Nav Links -->
+            <nav>
+                <ul id="nav__list" class="flex items-center gap-6 font-medium text-slate-300">
+                    <li><a href="#home" class="hover:text-sky-400 transition-colors">Home</a></li>
+                    <li><a href="#about" class="hover:text-sky-400 transition-colors">About</a></li>
+                    <li><a href="#projects" class="hover:text-sky-400 transition-colors">Projects</a></li>
+                    <li><a href="#contact" class="hover:text-sky-400 transition-colors">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Search Bar -->
+            <div class="flex items-center gap-2 w-full md:w-auto">
+                <input 
+                    type="text" 
+                    id="search-input" 
+                    placeholder="Search projects..." 
+                    class="bg-slate-800 text-slate-200 border border-slate-700 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-sky-500 w-full md:w-64"
+                >
+                <button 
+                    id="search-btn" 
+                    class="bg-sky-500 hover:bg-sky-600 text-white font-medium px-4 py-2 rounded-lg text-sm transition-colors"
+                >
+                    Search
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-6 py-12 flex-grow w-full space-y-24">
+
+        <!-- Hero / Home Section -->
+        <section id="home" class="flex flex-col-reverse md:flex-row items-center justify-between gap-12 py-12">
+            <div class="space-y-4 text-center md:text-left md:w-1/2">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white">
+                    Building Modern Web & Mobile Solutions
+                </h1>
+                <p class="text-slate-400 text-lg">
+                    Hi, I'm Youssef. Front-End & Flutter Developer crafting clean, user-friendly, and interactive applications.
+                </p>
+                <div class="pt-4">
+                    <a href="#projects" class="inline-block bg-sky-500 hover:bg-sky-600 text-white font-medium px-6 py-3 rounded-xl transition-colors">
+                        View Projects
+                    </a>
                 </div>
-                <h1 id="about">My name is Youssef Medhat.</h1>
-                <p class="hero-subtext">Frontend Web Developer creating responsive & modern web interfaces.</p>
-                <p class="hero-desc">Specialized in HTML5, CSS3, JavaScript, Tailwind CSS, Bootstrap, and web application UI components.</p>
-            </section>
+            </div>
+            
+            <!-- Hero Image / Avatar -->
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-sky-500/30 shadow-2xl shadow-sky-500/10">
+                    <img 
+                        src="images/YoussefMedhat.jpeg" 
+                        alt="Youssef Profile Picture" 
+                        class="w-full h-full object-cover"
+                    >
+                </div>
+            </div>
+        </section>
 
-            <section id="mn__sect02" class="mn__sect title-container">
-                <h2 id="projects">Web Projects</h2>
-            </section>
+        <!-- About Section -->
+        <section id="about" class="bg-slate-800/50 p-8 rounded-2xl border border-slate-800 space-y-4">
+            <h2 class="text-2xl font-bold text-sky-400">About Me</h2>
+            <p class="text-slate-300 leading-relaxed">
+                Computer Science student with experience in building responsive web applications using JavaScript, Tailwind CSS, and Flutter for cross-platform mobile apps. Passionate about problem-solving, UI/UX, and continuous learning.
+            </p>
+        </section>
 
-            <section id="mn__sect03" class="mn__sect project-card">
-                <h3>Youssef Tech Showcase</h3>
-                <p>Responsive tech product landing page built with Tailwind CSS & JavaScript.</p>
-                <a href="#" class="project-btn" target="_blank">View Project</a>
-            </section>
+        <!-- Projects Section -->
+        <section id="projects" class="space-y-6">
+            <h2 class="text-2xl font-bold text-sky-400">Featured Projects</h2>
+            
+            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Project 1: Web Landing Page -->
+                <div class="project-card bg-slate-800 border border-slate-700 rounded-xl overflow-hidden flex flex-col justify-between">
+                    <div class="h-48 bg-slate-700 overflow-hidden">
+                        <img 
+                            src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80" 
+                            alt="Youssef Tech Landing Page" 
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                        >
+                    </div>
+                    <div class="p-6 space-y-4 flex-grow flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <h3 class="text-xl font-bold text-white">Youssef Tech Landing Page</h3>
+                            <p class="text-slate-400 text-sm">Responsive showcase landing page built with HTML, Tailwind CSS, and Vanilla JavaScript.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="bg-sky-500/10 text-sky-400 text-xs px-2.5 py-1 rounded-md font-medium">Tailwind CSS</span>
+                            <span class="bg-sky-500/10 text-sky-400 text-xs px-2.5 py-1 rounded-md font-medium">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
 
-            <section id="mn__sect04" class="mn__sect project-card">
-                <h3>E-Commerce Web UI</h3>
-                <p>Interactive web store frontend using HTML5, CSS Grid, and JS DOM manipulation.</p>
-                <a href="#" class="project-btn" target="_blank">View Project</a>
-            </section>
+                <!-- Project 2: Mobile Application -->
+                <div class="project-card bg-slate-800 border border-slate-700 rounded-xl overflow-hidden flex flex-col justify-between">
+                    <div class="h-48 bg-slate-700 overflow-hidden">
+                        <img 
+                            src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80" 
+                            alt="Serenity Mobile App" 
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                        >
+                    </div>
+                    <div class="p-6 space-y-4 flex-grow flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <h3 class="text-xl font-bold text-white">Serenity Mobile App</h3>
+                            <p class="text-slate-400 text-sm">Flutter mobile application with responsive UI components and Cloud Firestore backend.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="bg-sky-500/10 text-sky-400 text-xs px-2.5 py-1 rounded-md font-medium">Flutter</span>
+                            <span class="bg-sky-500/10 text-sky-400 text-xs px-2.5 py-1 rounded-md font-medium">Firebase</span>
+                        </div>
+                    </div>
+                </div>
 
-            <section id="mn__sect05" class="mn__sect project-card">
-                <h3>Dashboard Admin Web</h3>
-                <p>Modern admin panel interface created using Bootstrap 5 and custom styles.</p>
-                <a href="#" class="project-btn" target="_blank">View Project</a>
-            </section>
+                <!-- Project 3: Desktop System -->
+                <div class="project-card bg-slate-800 border border-slate-700 rounded-xl overflow-hidden flex flex-col justify-between">
+                    <div class="h-48 bg-slate-700 overflow-hidden">
+                        <img 
+                            src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=800&q=80" 
+                            alt="Wedding Hall Reservation System" 
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                        >
+                    </div>
+                    <div class="p-6 space-y-4 flex-grow flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <h3 class="text-xl font-bold text-white">Wedding Hall Reservation System</h3>
+                            <p class="text-slate-400 text-sm">Desktop application built using JavaFX, JPA, and MySQL database management.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="bg-sky-500/10 text-sky-400 text-xs px-2.5 py-1 rounded-md font-medium">JavaFX</span>
+                            <span class="bg-sky-500/10 text-sky-400 text-xs px-2.5 py-1 rounded-md font-medium">MySQL</span>
+                        </div>
+                    </div>
+                </div>
 
-            <section id="mn__sect06" class="mn__sect project-card">
-                <h3>Web Portfolio Template</h3>
-                <p>Multi-screen responsive layout utilizing CSS Grid & Flexbox architecture.</p>
-                <a href="#" class="project-btn" target="_blank">View Project</a>
-            </section>
+            </div>
+            
+            <p id="no-results" class="text-slate-500 text-center py-8 hidden">No matching projects found.</p>
+        </section>
 
-            <section id="mn__sect07" class="mn__sect project-card">
-                <h3>Interactive Web Forms</h3>
-                <p>Dynamic form validation system developed with vanilla JavaScript.</p>
-                <a href="#" class="project-btn" target="_blank">View Project</a>
-            </section>
+        <!-- Contact Section -->
+        <section id="contact" class="bg-slate-800/50 p-8 rounded-2xl border border-slate-800 space-y-6">
+            <h2 class="text-2xl font-bold text-sky-400">Contact Me</h2>
+            
+            <form id="contact-form" class="space-y-4 max-w-lg">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-slate-300 mb-1">Name</label>
+                    <input type="text" id="name" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-slate-200 focus:outline-none focus:border-sky-500">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-slate-300 mb-1">Email</label>
+                    <input type="email" id="email" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-slate-200 focus:outline-none focus:border-sky-500">
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-medium text-slate-300 mb-1">Message</label>
+                    <textarea id="message" rows="4" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-slate-200 focus:outline-none focus:border-sky-500"></textarea>
+                </div>
+                <button type="submit" id="send-btn" class="bg-sky-500 hover:bg-sky-600 text-white font-medium px-6 py-2.5 rounded-lg transition-colors flex items-center justify-center gap-2">
+                    <span>Send Message</span>
+                </button>
+            </form>
+        </section>
 
-            <section id="mn__sect08" class="mn__sect project-card">
-                <h3>Web Components UI Kit</h3>
-                <p>Reusable custom Web UI components built for web apps and sites.</p>
-                <a href="#" class="project-btn" target="_blank">View Project</a>
-            </section>
-        </main>
+    </main>
 
-        <footer id="contact">
-            <p>&copy; 2026 Youssef Medhat. All rights reserved.</p>
-        </footer>
-    </div>
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 py-6 text-center text-slate-500 text-sm">
+        &copy; 2026 Youssef Tech. All rights reserved.
+    </footer>
 
+    <!-- JavaScript logic for buttons, scroll & search -->
     <script>
-        // Smooth Scrolling for Navigation
-        document.querySelectorAll('#nav__list a').forEach(anchor => {
+        // 1. Smooth Scroll for Navbar Links
+        document.querySelectorAll('#nav__list a, a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const targetId = this.getAttribute('href');
                 if (targetId.startsWith('#')) {
                     e.preventDefault();
-                    document.querySelector(targetId)?.scrollIntoView({
-                        behavior: 'smooth'
-                    });
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
                 }
             });
         });
 
-        // Real-time Search Filter for Projects
-        const searchInput = document.getElementById('search');
+        // 2. Real-time Search Logic for Projects
+        const searchInput = document.getElementById('search-input');
         const searchBtn = document.getElementById('search-btn');
         const projectCards = document.querySelectorAll('.project-card');
+        const noResults = document.getElementById('no-results');
 
         function filterProjects() {
             const query = searchInput.value.toLowerCase().trim();
+            let visibleCount = 0;
+
             projectCards.forEach(card => {
                 const title = card.querySelector('h3').textContent.toLowerCase();
                 const desc = card.querySelector('p').textContent.toLowerCase();
+
                 if (title.includes(query) || desc.includes(query)) {
                     card.style.display = 'flex';
+                    visibleCount++;
                 } else {
                     card.style.display = 'none';
                 }
             });
+
+            if (visibleCount === 0) {
+                noResults.classList.remove('hidden');
+            } else {
+                noResults.classList.add('hidden');
+            }
         }
 
+        // Trigger search on input typing and search button click
         searchInput.addEventListener('input', filterProjects);
         searchBtn.addEventListener('click', filterProjects);
+
+        // Allow pressing Enter in search field
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                filterProjects();
+            }
+        });
+
+        // 3. Contact Form Submission Logic
+        const contactForm = document.getElementById('contact-form');
+        const sendBtn = document.getElementById('send-btn');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Disable button and show loading text
+            sendBtn.disabled = true;
+            sendBtn.innerHTML = '<span>Sending...</span>';
+
+            setTimeout(() => {
+                alert('Thank you! Your message has been sent successfully.');
+                contactForm.reset();
+                sendBtn.disabled = false;
+                sendBtn.innerHTML = '<span>Send Message</span>';
+            }, 1000);
+        });
     </script>
 </body>
 </html>
